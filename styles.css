@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #071c2f;
+  color: #eae3d2;
+}
+
+/* NAVBAR */
+nav {
+  background: #3b5873;
+  padding: 15px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+/* ME */
+.myself {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 50px;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 250px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.myself-card {
+  background: #6f8faa;
+  padding: 30px;
+  border-radius: 20px;
+  transform: rotate(-5deg);
+}
+
+/* ABOUT */
+.about {
+  padding: 50px;
+}
+
+.stats {
+  display: flex;
+  gap: 50px;
+}
+
+/* SKILLS */
+.skills {
+  padding: 60px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.skill-box {
+  height: 100px;
+  border-radius: 20px;
+  border: 2px solid #6f8faa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PROJECTS */
+.projects {
+  padding: 60px;
+  text-align: center;
+}
+
+.project-card {
+  position: relative;
+  height: 200px;
+  margin: 40px 0;
+}
+
+.project-box {
+  width: 200px;
+  height: 150px;
+  background: #ccc;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.main {
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.left {
+  left: 30%;
+  opacity: 0.5;
+}
+
+.right {
+  right: 30%;
+  opacity: 0.5;
+}
+
+/* EXPERIENCE */
+.experience {
+  padding: 60px;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  border-left: 3px solid #6f8faa;
+  padding-left: 20px;
+}
+
+/* CERTIFICATES */
+.certificates {
+  padding: 60px;
+  text-align: center;
+}
+
+.cert-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cert-box {
+  width: 200px;
+  height: 120px;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+.contact-section {
+  background: #3b5873;
+  text-align: center;
+  padding: 40px;
+}
