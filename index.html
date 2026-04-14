@@ -2,121 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav>
-    <ul>
-      <li>About</li>
-      <li>Tools</li>
-      <li>Projects</li>
-      <li>Experiences</li>
-      <li>Certificates</li>
-      <li class="contact">CONTACT ME!</li>
-    </ul>
+    <a href="#about">about</a>
+    <a href="#tools">skills & tools</a>
+    <a href="#projects">projects</a>
+    <a href="#experiences">experiences</a>
+    <a href="#certificates">certificates</a>
+    <a href="#contact" class="cta">Contact Me!</a>
   </nav>
 
-  <section class="myself">
-    <div class="profile-pic">Foto</div>
+  <section id="about">
 
-    <div class="myslef-card">
-      <h1>Lysia Callysta Dharmawan</h1>
-      <p>Informatics Student</p>
-      <span>GPA: 3.98/4.00</span>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      Isi deskripsi kamu di sini (jangan lorem ipsum ya 😭)
-    </p>
-
-    <div class="stats">
-      <div>
-        <h3>2+</h3>
-        <p>Years Experience</p>
+    <div class="myself">
+      <div class="myself-left">
+        <img src="./images/me.jpeg" alt="me">
       </div>
-      <div>
-        <h3>10+</h3>
-        <p>Projects</p>
+
+      <div class="myself-right">
+        <p class="hi">Hi, I'm</p>
+        <h1>Lysia Callysta<br>Dharmawan</h1>
+        <p class="role">Informatics Student | apaan yak jir</p>
+        <span class="gpa">GPA: 3.98/4.00</span>
+
       </div>
     </div>
 
-    <button>Download CV</button>
+    <!-- ABOUT -->
+    <div class="about-section">
+      <div class="about-left">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">
+          Hi! I’m Lysia, an Informatics student who is currently exploring Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <div class="exp-card">
+          <div class="exp-num">2+</div>
+          <div class="exp-text">years experience</div>
+        </div>
+
+        <button class="btn-cv">Download CV</button>
+      </div>
+
+      <div class="about-right">
+        <img src="./images/myself.jpeg" alt="me">
+      </div>
+    </div>
+
   </section>
 
   <!-- SKILLS -->
-  <section class="skills">
-    <h2>Skills & Tools</h2>
-
-    <div class="skills-grid">
-      <div class="skill-box">HTML</div>
-      <div class="skill-box">CSS</div>
-      <div class="skill-box">JS</div>
-      <div class="skill-box">Figma</div>
-      <div class="skill-box">React</div>
-      <div class="skill-box">Node</div>
-      <div class="skill-box">Git</div>
-      <div class="skill-box">MySQL</div>
-    </div>
+  <section id="tools">
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="grid" id="tools-grid"></div>
   </section>
 
   <!-- PROJECTS -->
-  <section class="projects">
-    <h2>Past Projects</h2>
+  <section id="projects">
+    <h2 class="section-title">Past Projects</h2>
 
-    <div class="project-card">
-      <div class="project-box main"></div>
-      <div class="project-box left"></div>
-      <div class="project-box right"></div>
+    <div class="projects-container">
+      <div class="proj-stage">
+        <div class="carousel-wrap">
+          <div class="carousel-track" id="proj-track"></div>
+        </div>
+      </div>
+
+      <div class="proj-info-panel">
+        <div class="proj-title-display" id="proj-title-display"></div>
+        <div class="proj-tags" id="proj-tags-display"></div>
+        <div class="proj-desc-panel" id="proj-desc-display"></div>
+      </div>
+
+      <div class="carousel-dots" id="proj-dots"></div>
+      <div class="carousel-btns">
+        <button class="carousel-btn" id="proj-prev">&#8592;</button>
+        <button class="carousel-btn" id="proj-next">&#8594;</button>
+      </div>
     </div>
-
-    <p>Deskripsi project kamu di sini</p>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="experience">
-    <h2>Past Experiences</h2>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>UMN ECO 2026</h3>
-        <p>Deskripsi pengalaman</p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>OMB UMN 2025</h3>
-        <p>Deskripsi pengalaman</p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>Mentoring UMN 2025</h3>
-        <p>Deskripsi pengalaman</p>
-      </div>
-    </div>
+  <section id="experiences">
+    <h2 class="section-title">Past Experiences</h2>
+    <div class="timeline" id="exp-timeline"></div>
   </section>
 
   <!-- CERTIFICATES -->
-  <section class="certificates">
-    <h2>My Certificates</h2>
-
-    <div class="cert-grid">
-      <div class="cert-box"></div>
-      <div class="cert-box"></div>
-      <div class="cert-box"></div>
+  <section id="certificates">
+    <h2 class="section-title">My Certificates</h2>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="cert-track"></div>
+    </div>
+    <div class="carousel-btns">
+      <button class="carousel-btn" id="cert-prev">&#8592;</button>
+      <button class="carousel-btn" id="cert-next">&#8594;</button>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <footer class="contact-section">
-    <h2>Let's Connect!</h2>
-    <p>Email | LinkedIn | GitHub</p>
+  <footer id="contact">
+    <h2 class="section-title">My Contact</h2>
+    <p> Let's get in touch!</p>
+    <div class="connect-grid" id="connect-grid"></div>
   </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
