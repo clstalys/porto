@@ -143,23 +143,23 @@ const c = DATA.contact;
 
 document.getElementById('connect-grid').innerHTML = `
   <a href="https://github.com/${c.github}" target="_blank" class="connect-icon-btn">
-    <img src="icons/github.png" alt="GitHub">
+    <img src="images/github.png" alt="GitHub">
   </a>
 
   <a href="https://linkedin.com/in/${c.linkedin}" target="_blank" class="connect-icon-btn">
-    <img src="icons/linkedin.png" alt="LinkedIn">
+    <img src="images/linkedin.png" alt="LinkedIn">
   </a>
 
   <a href="https://instagram.com/${c.instagram.replace('@','')}" target="_blank" class="connect-icon-btn">
-    <img src="icons/instagram.png" alt="Instagram">
+    <img src="images/instagram.png" alt="Instagram">
   </a>
 
   <a href="mailto:${c.email}" class="connect-icon-btn">
-    <img src="icons/email.png" alt="Email">
+    <img src="images/email.png" alt="Email">
   </a>
 
   <a href="https://wa.me/${c.phone.replace(/[^0-9]/g,'')}" target="_blank" class="connect-icon-btn">
-    <img src="icons/whatsapp.png" alt="WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp">
   </a>
 `;
 
