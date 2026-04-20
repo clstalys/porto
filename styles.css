@@ -207,6 +207,7 @@ h2.section-title {
   grid-template-columns: repeat(6, 1fr);
   gap: 0.8rem;
 }
+
 .tool-cell {
   aspect-ratio: 1;
   border: 1.5px solid var(--navy-light);
@@ -218,6 +219,7 @@ h2.section-title {
   transition: border-color 0.2s, background 0.2s;
   cursor: default;
 }
+
 .tool-cell:hover { border-color: var(--accent); background: var(--navy-card); color: var(--accent-bright); }
 .tool-cell .icon { font-size: 1.4rem; }
 
@@ -226,6 +228,7 @@ h2.section-title {
   overflow: hidden;
   padding: 1rem 0 2rem;
 }
+
 .carousel-track {
   display: flex;
   gap: 1.2rem;
@@ -233,10 +236,13 @@ h2.section-title {
   will-change: transform;
   cursor: grab;
 }
+
 .carousel-track:active { cursor: grabbing; }
+
 .carousel-btns {
   display: flex; justify-content: center; gap: 0.8rem; margin-top: 1.5rem;
 }
+
 .carousel-btn {
   width: 36px; height: 36px; border-radius: 50%;
   border: 1.5px solid var(--navy-light);
@@ -245,6 +251,7 @@ h2.section-title {
   display: flex; align-items: center; justify-content: center;
   transition: all 0.2s;
 }
+
 .carousel-btn:hover { border-color: var(--accent); color: var(--accent-bright); }
 
 #projects {
@@ -285,13 +292,12 @@ h2.section-title {
   position: relative;
 }
 
-/* Track harus menjadi titik pusat (anchor) untuk kartu-kartu absolut */
 #projects .carousel-track {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 100%;        /* FULL WIDTH */
+  width: 100%;       
   height: 100%;
   margin: 0 auto;
   transform: none !important;
@@ -347,6 +353,7 @@ h2.section-title {
   display: flex; align-items: center; justify-content: center;
   color: #888; font-size: 0.8rem; overflow: hidden;
 }
+
 .proj-img img { width: 100%; height: 100%; object-fit: cover; }
 
 .proj-info-panel { 
@@ -388,34 +395,51 @@ h2.section-title {
 }
 
 /* ── EXPERIENCE TIMELINE ── */
-#experiences .timeline { position: relative; padding-left: 1.5rem; }
+#experiences .timeline { 
+  position: relative; 
+  padding-left: 1.5rem; 
+}
+
 #experiences .timeline::before {
-  content: ''; position: absolute; left: 0; top: 8px; bottom: 0; width: 2px;
+  content: ''; 
+  position: absolute; 
+  left: 0; top: 8px; bottom: 0; width: 2px;
   background: var(--navy-light);
 }
+
 .exp-item { position: relative; margin-bottom: 2.5rem; }
+
 .exp-item::before {
-  content: ''; position: absolute; left: -1.5rem; top: 6px;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--accent); border: 2px solid var(--navy);
+  content: ''; 
+  position: absolute; 
+  left: -1.5rem; top: 6px;
+  width: 10px; height: 10px; 
+  border-radius: 50%;
+  background: var(--accent); 
+  border: 2px solid var(--navy);
   transform: translateX(-4px);
 }
+
 .exp-org { font-weight: 700; font-size: 0.95rem; color: var(--accent-bright); }
+
 .exp-year {
   display: inline-block; font-size: 0.7rem; font-weight: 700;
   background: var(--navy-light); color: var(--blue-muted);
   padding: 0.1rem 0.5rem; border-radius: 4px; margin-left: 0.5rem;
   letter-spacing: 0.05em;
 }
+
 .exp-date { font-size: 0.78rem; color: var(--text-muted); margin: 0.3rem 0 0.5rem; }
 .exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
 .exp-col-label { font-size: 0.75rem; color: var(--text-muted); line-height: 1.7; }
+
 .exp-meta {
   display: flex;
   gap: 0.6rem;
   align-items: center;
   margin: 0.3rem 0 0.5rem;
 }
+
 .exp-role {
   display: inline-block;
   margin-top: 0.2rem;
@@ -473,13 +497,13 @@ h2.section-title {
 .cert-card[data-pos="3"],
 .cert-card[data-pos="-3"] { transform: translate(-50%,-50%) scale(0.5); opacity: 0; pointer-events: none; z-index: 7; }
 
-/* dots */
 .cert-dots {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1rem;
 }
+
 .cert-dots .dot {
   width: 7px; height: 7px;
   border-radius: 50%;
@@ -487,6 +511,7 @@ h2.section-title {
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 }
+
 .cert-dots .dot.active {
   background: var(--accent);
   transform: scale(1.3);
@@ -498,6 +523,7 @@ h2.section-title {
   display: flex; align-items: center; justify-content: center;
   color: #888; font-size: 0.8rem; overflow: hidden;
 }
+
 .cert-img img { width: 100%; height: 100%; object-fit: cover; }
 .cert-info { padding: 0.8rem; background: var(--navy-card); }
 .cert-title { font-weight: 700; font-size: 0.85rem; color: var(--accent-bright); }
@@ -515,6 +541,7 @@ h2.section-title {
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
+
 .cert-link-btn:hover {
   background: var(--accent);
   color: var(--navy);
@@ -562,10 +589,9 @@ h2.section-title {
   object-fit: contain;
 }
 
-/* hover */
 .connect-icon-btn:hover {
   transform: translateY(-4px) scale(1.05);
-  background: var(--accent);
+  background: var(--blue-muted);
 }
 
 /* ── RESPONSIVE ── */
