@@ -194,11 +194,26 @@ document.getElementById('connect-grid').innerHTML = `
   const cards = track.querySelectorAll('[data-card]');
 
   function updateInfo() {
+    const panel = document.querySelector('.proj-info-panel');
+
+    const title = document.getElementById('proj-title-display');
+    const tags = document.getElementById('proj-tags-display');
+    const desc = document.getElementById('proj-desc-display');
+
     const p = DATA.projects[current];
-    document.getElementById('proj-title-display').textContent = p.title;
-    document.getElementById('proj-tags-display').innerHTML =
-      p.tags.map(t => `<span class="tag">${t}</span>`).join('');
-    document.getElementById('proj-desc-display').textContent = p.desc;
+
+    panel.classList.add('changing');
+
+    setTimeout(() => {
+      title.textContent = p.title;
+
+      tags.innerHTML =
+        p.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+      desc.textContent = p.desc;
+
+      panel.classList.remove('changing');
+    }, 200);
   }
 
   function go(idx) {
@@ -352,9 +367,8 @@ const revealObserver = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
-
-        // Only animate once
-        revealObserver.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove('show');
       }
     });
   },

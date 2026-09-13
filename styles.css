@@ -204,23 +204,33 @@ h2.section-title {
 /* ── TOOLS GRID ── */
 #tools .grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0.8rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
 .tool-cell {
-  aspect-ratio: 1;
+  height: 120px;
   border: 1.5px solid var(--navy-light);
   border-radius: 1rem;
   background: var(--navy-mid);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 0.4rem; font-size: 0.65rem; color: var(--text-muted);
   text-align: center; padding: 0.5rem;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
   cursor: default;
 }
 
-.tool-cell:hover { border-color: var(--accent); background: var(--navy-card); color: var(--accent-bright); }
+.tool-cell:hover {
+  border-color: var(--accent);
+  background: var(--navy-card);
+  color: var(--accent-bright);
+  transform: translateY(0) scale(1.06);
+  z-index: 2;
+}
+
+.tool-cell.reveal.show:hover {
+  transform: translateY(0) scale(1.06);
+}
 .tool-cell .icon { font-size: 1.4rem; }
 
 .carousel-wrap {
@@ -252,13 +262,25 @@ h2.section-title {
   transition: all 0.2s;
 }
 
-.carousel-btn:hover { border-color: var(--accent); color: var(--accent-bright); }
+.carousel-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-bright);
+  transform: translateY(-2px);
+}
+
+.carousel-btn:active {
+  transform: translateY(0);
+}
+
+#tools {
+  padding-bottom: 2rem;
+}
 
 #projects {
   max-width: none;
   width: 100%;
   margin: 0;
-  padding: 6rem 0 4rem;
+  padding: 3rem 0 4rem;
 }
 
 #projects h2.section-title {
@@ -344,6 +366,16 @@ h2.section-title {
   opacity: 0.4; z-index: 8; 
 }
 
+.proj-card[data-pos="1"]:hover,
+.proj-card[data-pos="-1"]:hover {
+  filter: brightness(1.08);
+}
+
+.proj-card[data-pos="2"]:hover,
+.proj-card[data-pos="-2"]:hover {
+  filter: brightness(1.12);
+}
+
 .proj-card[data-pos="3"],
 .proj-card[data-pos="-3"] { transform: translate(-50%, -46%) scale(0.65);                opacity: 0;    z-index: 7; }
 
@@ -356,10 +388,16 @@ h2.section-title {
 
 .proj-img img { width: 100%; height: 100%; object-fit: cover; }
 
-.proj-info-panel { 
-  margin-top: -40px; 
-  text-align: center; 
-  padding: 0 1.5rem; 
+.proj-info-panel {
+  margin-top: -40px;
+  text-align: center;
+  padding: 0 1.5rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.proj-info-panel.changing {
+  opacity: 0;
+  transform: translateY(8px);
 }
 
 .proj-title-display { 
@@ -594,14 +632,28 @@ h2.section-title {
   background: var(--blue-muted);
 }
 
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  #about { grid-template-columns: 1fr; }
+  .hero-body-inner { grid-template-columns: 1fr; }
+  #tools .grid { grid-template-columns: repeat(4, 1fr); }
+  .tool-cell { height: 80px; }
+  .about-img-placeholder { display: none; }
+  .stats { flex-direction: row; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .connect-grid { grid-template-columns: 1fr; }
+  #projects .carousel-wrap { height: 360px; }
+  #projects .carousel-track { width: 280px; height: 280px; }
+  .proj-card { width: 240px; }
+}
+
+
 /* ── SCROLL REVEAL ── */
 
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .reveal.show {
@@ -609,12 +661,57 @@ h2.section-title {
   transform: translateY(0);
 }
 
-/* Respect users who prefer reduced motion */
+/* ── HERO ENTRANCE ANIMATION ── */
+
+.myself-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: heroPhotoIn 0.9s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.myself-right .hi,
+.myself-right h1,
+.myself-right .role,
+.myself-right .gpa {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: heroTextIn 0.7s ease forwards;
+}
+
+.myself-right .hi { animation-delay: 0.4s; }
+.myself-right h1 { animation-delay: 0.55s; }
+.myself-right .role { animation-delay: 0.7s; }
+.myself-right .gpa {
+  display: inline-block;
+  animation-delay: 0.85s;
+}
+
+@keyframes heroPhotoIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes heroTextIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .myself-left,
+  .myself-right .hi,
+  .myself-right h1,
+  .myself-right .role,
+  .myself-right .gpa {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
 
