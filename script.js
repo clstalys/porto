@@ -289,7 +289,7 @@ function makeCarousel({ trackId, prevId, nextId, items, renderCard }) {
   // render dots dynamically after the buttons
   const dotsContainer = document.createElement('div');
   dotsContainer.className = 'cert-dots';
-  track.closest('section').querySelector('.carousel-btns').after(dotsContainer);
+  track.closest('section').querySelector('.carousel-btns').before(dotsContainer);
   items.forEach((_, i) => {
     dotsContainer.innerHTML += `<div class="dot${i === 0 ? ' active' : ''}" data-i="${i}"></div>`;
   });
@@ -362,9 +362,15 @@ revealElements.forEach((element) => {
   element.classList.add('reveal');
 });
 
+// Contact langsung tampil tanpa transisi
+const contact = document.querySelector('#contact');
+contact.classList.add('show');
+
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
+      if (entry.target === contact) return;
+
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
       } else {
@@ -372,11 +378,22 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  {
-    threshold: 0.15
-  }
+  { threshold: 0.15 }
 );
 
 revealElements.forEach((element) => {
   revealObserver.observe(element);
+});
+
+/* =========================
+   LOADING + HERO ANIMATION
+   ========================= */
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
+  setTimeout(() => {
+    loader.classList.add("hide");
+    document.body.classList.add("hero-loaded");
+  }, 900);
 });
