@@ -594,6 +594,30 @@ h2.section-title {
   background: var(--blue-muted);
 }
 
+/* ── SCROLL REVEAL ── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   #about { grid-template-columns: 1fr; }

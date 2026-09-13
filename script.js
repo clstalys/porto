@@ -111,6 +111,9 @@ DATA.tools.forEach(t => {
   toolsGrid.innerHTML += `<div class="tool-cell"><span class="icon">${t.icon}</span>${t.name}</div>`;
 });
 
+document.querySelectorAll('#tools .tool-cell').forEach((element, index) => {
+  element.style.transitionDelay = `${index * 0.05}s`;
+});
 
 const timeline = document.getElementById('exp-timeline');
 
@@ -325,4 +328,41 @@ makeCarousel({
         ${cert.link ? `<a href="${cert.link}" target="_blank" rel="noopener" class="cert-link-btn">View Certificate ↗</a>` : ''}
       </div>
     </div>`
+});
+
+/* ── SCROLL REVEAL ── */
+
+const revealElements = document.querySelectorAll(
+  'section:not(#about) .section-title, ' +
+  '.about-section, ' +
+  '#tools .tool-cell, ' +
+  '.projects-container, ' +
+  '#experiences .exp-item, ' +
+  '#certificates .carousel-wrap, ' +
+  '#certificates .carousel-btns, ' +
+  '#contact'
+);
+
+revealElements.forEach((element) => {
+  element.classList.add('reveal');
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+
+        // Only animate once
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
 });
