@@ -217,6 +217,7 @@ h2.section-title {
   text-align: center; padding: 0.5rem;
   transition: border-color 0.2s, background 0.2s, transform 0.2s;
   cursor: default;
+  overflow: hidden;
 }
 
 .tool-cell:hover {
@@ -230,7 +231,29 @@ h2.section-title {
 .tool-cell.reveal.show:hover {
   transform: translateY(0) scale(1.06);
 }
-.tool-cell .icon { font-size: 1.4rem; }
+
+.tool-cell .icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  display: block;
+}
+
+/* FIX: project buttons harus selalu bisa diklik */
+#projects .carousel-btns {
+  position: relative;
+  z-index: 100;
+}
+
+#projects .carousel-dots {
+  position: relative;
+  z-index: 100;
+}
+
+#projects .carousel-btn {
+  position: relative;
+  z-index: 101;
+}
 
 .carousel-wrap {
   position: relative;

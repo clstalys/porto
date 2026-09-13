@@ -1,20 +1,26 @@
 const DATA = {
   tools: [
-    { icon: "...", name: "Communications" },
-    { icon: "...", name: "Leadership" },
-    { icon: "...", name: "Public Speaking" },
-    { icon: "...", name: "Teamwork" },
-    { icon: "...", name: "HTML" },
-    { icon: "...", name: "CSS" },
-    { icon: "...", name: "NodeJS" },
-    { icon: "...", name: "React" },
-    { icon: "...", name: "Electron" },
-    { icon: "...", name: "MySQL" },
-    { icon: "...", name: "Figma" },
-    { icon: "...", name: "Git" },
+    { icon: "./images/tools/communication.png", hoverIcon: "./images/tools/communication-hover.png", name: "Communications" },
+    { icon: "./images/tools/leadership.png", hoverIcon: "./images/tools/leadership-hover.png", name: "Leadership" },
+    { icon: "./images/tools/public-speaking.png", hoverIcon: "./images/tools/public-speaking-hover.png", name: "Public Speaking" },
+    { icon: "./images/tools/teamwork.png", hoverIcon: "./images/tools/teamwork-hover.png", name: "Teamwork" },
+    { icon: "./images/tools/html.png", hoverIcon: "./images/tools/html-hover.png", name: "HTML CSS" },
+    { icon: "./images/tools/linux.png", hoverIcon: "./images/tools/linux-hover.png", name: "Linux" },
+    { icon: "./images/tools/nodejs.png", hoverIcon: "./images/tools/nodejs-hover.png", name: "NodeJS" },
+    { icon: "./images/tools/react.png", hoverIcon: "./images/tools/react-hover.png", name: "React" },
+    { icon: "./images/tools/electron.png", hoverIcon: "./images/tools/electron-hover.png", name: "Electron" },
+    { icon: "./images/tools/mysql.png", hoverIcon: "./images/tools/mysql-hover.png", name: "MySQL" },
+    { icon: "./images/tools/figma.png", hoverIcon: "./images/tools/figma-hover.png", name: "Figma" },
+    { icon: "./images/tools/git.png", hoverIcon: "./images/tools/git-hover.png", name: "Git" }
   ],
 
   projects: [
+    {
+      title: "What's Now?",
+      desc: "A self-initiated desktop application designed to help turn free time into meaningful activities. 'What's Now?' recommends activities based on the time available, connects them to personal goals, and provides a focused timer to help users get started.",
+      tags: ["Electron", "Desktop Apps", "Personal"],
+      img: "./images/whatsNow.png"
+    },
     {
       title: "Interactive Exploration Game\n(Ucup Menjelajah Nusantara)",
       desc: "An interactive exploration game built with ReactJS where players navigate across multiple locations such as beaches, mountains, lakes, temples, and homes. The game integrates dynamic mechanics including character status management (hunger, energy, happiness, cleanliness), inventory systems, and time-based events. Players must balance resources while completing activities, exploring areas, and collecting items to achieve optimal daily scores.",
@@ -28,42 +34,71 @@ const DATA = {
       img: "./images/inventory.png"
     },
     {
+      title: "UMN ECO 2026",
+      desc: "A collaborative event website developed for UMN ECO 2026, combining frontend development with an initial UI/UX concept. I worked on the website's visual direction, created supporting visual assets, and collaborated with the visual team to refine the final design.",
+      tags: ["Frontend", "Team Collaboration", "UI/UX"],
+      img: "./images/eco.png"
+    },
+    {
+      title: "ReVamp RealBudget Application",
+      desc: "RealBudget is a UI/UX redesign of a personal finance application, focused on improving usability and introducing an envelope budgeting approach. The redesign helps users plan their spending by allocating income into categories and clearly tracking the remaining budget for each category. Cr: RealBudget on PlayStore.",
+      tags: ["UI/UX", "Figma", "Prototyping"],
+      img: "./images/realBudget.png"
+    },
+    {
       title: "Mobile Banking UI/UX Design Re-Vamp\n(NFC-Based Interaction)",
       desc: "Designed a mobile banking UI/UX concept inspired by the OCTO app, focusing on seamless user flows and NFC-based interactions. The project includes key features such as login, balance checking, top-up, transfer simulation, and transaction summaries. Emphasis was placed on intuitive navigation, clean interface design, and consistent visual hierarchy to enhance usability and user experience.",
       tags: ["UI/UX", "Figma", "Prototyping"],
       img: "./images/softeng.png"
     },
     {
-      title: "HCI????",
-      desc: "apa buat project lagi ya pake electron yang bagus!!! buat.",
-      tags: ["yes", "hallo", "mau kaya"],
-      img: ""
-    },
-    {
-      title: "Web ECO?",
-      desc: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      tags: ["help", "hehe", "lol"],
-      img: ""
-    },
+      title: "Birthday Interactive Web",
+      desc: "A self-initiated interactive website created as a personalized birthday experience. I developed the project independently from concept to implementation and deployment, exploring how web development can be used to turn a simple idea into a more personal and interactive digital experience.",
+      tags: ["Interactive", "Personal", "Web"],
+      img: "./images/bday.png"
+    }
   ],
 
   experiences: [
     {
-      org: "UMN ECO",
+      org: "Database Systems Laboratory Assistant",
       year: "2026",
-      date: "Mar 26 – Now",
-      role: "Website Team Member",
-      left: "Responsible for designing UI/UX and developing the frontend for an organization’s event website. Handled a total of four event pages along with one main landing page, ensuring consistent design and smooth user experience across all sections.",
-      right: "Successfully delivered multiple event pages with cohesive design and responsive layouts. Strengthened skills in UI/UX design, frontend development, and maintaining design consistency across different pages. Gained experience in handling multi-page projects and optimizing user flow for event-based platforms. ya bacot dl la"
+      date: "Ags 26 – Present",
+      role: "Laboratory Assistant",
+      left: "Teach and guide 29 students through weekly database laboratory sessions, explaining database fundamentals and helping students apply database concepts to laboratory tasks and design.",
+      right: "Strengthened my teaching, communication, and problem-solving skills by creating interactive learning materials, preparing quizzes, assessing assignments, and reporting grades to the lecturer." 
     },
     {
-      org: "OMB UMN",
+      org: "UMN ECO",
+      year: "2026",
+      date: "Mar 26 – Present",
+      role: "Website Team Member",
+      left: "Designed the UI/UX and developed the frontend for UMN ECO 2026’s event website. Worked on the main landing page and four event pages while maintaining a consistent visual style and user flow.",
+      right: "Strengthened my skills in UI/UX design and frontend development through a real-world event website. Gained experience in translating designs into responsive pages and collaborating with the visual team."  
+    },
+    {
+      org: "STUKM (Serah Terima Tahunan UKM)",
+      year: "2026",
+      date: "Mar 26 – Present",
+      role: "Event Coordinator",
+      left: "Coordinating the annual handover event for STUKM, overseeing the planning and preparation of the program while coordinating the event team.",
+      right: "Strengthening my leadership, communication, and coordination skills by managing the team and ensuring the event is well-prepared through collaboration and problem-solving."
+    },
+    {
+      org: "Data Structures & Algorithms Laboratory Assistant",
+      year: "2026",
+      date: "Feb 26 – June 2026",
+      role: "Laboratory Assistant",
+      left: "Assisted 40 students through weekly Data Structures and Algorithms laboratory sessions, guiding them through programming and data structure exercises and helping troubleshoot implementation errors.",
+      right: "Strengthened my teaching, communication, and problem-solving skills by preparing and grading quizzes and assignments and compiling laboratory grades for the lecturer."
+    },
+    {
+      org: "OMB UMN (Orientasi Mahasiswa Baru)",
       year: "2025",
       date: "Mar 25 – Aug 25",
       role: "Person In Charge",
-      left: "Leading the orientation program for new students. Responsible for planning and coordinating program activities, managing teams, and ensuring smooth execution of the overall event.",
-      right: "Strengthened leadership, communication, and coordination skills by managing teams under pressure. Successfully ensured the program ran smoothly through effective collaboration and problem-solving during execution."
-    },
+      left: "Led the orientation program for 20+ new students, overseeing program planning, team coordination, and overall event execution.",
+      right: "Strengthened my leadership, communication, and problem-solving skills by coordinating teams and ensuring the program ran smoothly under pressure."    },
     {
       org: "UMN Festival",
       year: "2025",
@@ -84,7 +119,7 @@ const DATA = {
       org: "Carrer Development Center UMN",
       year: "2024-2025",
       date: "Mar 25 – Nov 25",
-      role: "Your role / position here",
+      role: "Event Operator",
       left: "Responsible for preparing and managing logistical needs for participants and committee members, ensuring all facilities and resources were properly arranged before and during the event.",
       right: "Strong coordination, problem-solving skills, gained experience in teamwork, time management, and ensuring operational readiness throughout the event."
     },
@@ -92,9 +127,7 @@ const DATA = {
 
   certificates: [
     { title: "HCIA-AI", issuer: "Issued by Huawei", img: "", link : "" },
-    { title: "HCIA-Open Gauss",   issuer: "Issued by Huawei",  img: "", link : "" },
-    { title: "Third Certificate",     issuer: "aaaaaaaaaaaaaaa", img: "", link : "" },
-    { title: "Fourth Certificate",    issuer: "helppppppppppp",     img: "", link : "" },
+    { title: "HCIA-Open Gauss",   issuer: "Issued by Huawei",  img: "", link : "" }
   ],
 
   contact: {
@@ -107,8 +140,28 @@ const DATA = {
 };
 
 const toolsGrid = document.getElementById('tools-grid');
+
 DATA.tools.forEach(t => {
-  toolsGrid.innerHTML += `<div class="tool-cell"><span class="icon">${t.icon}</span>${t.name}</div>`;
+  toolsGrid.innerHTML += `
+    <div class="tool-cell">
+      <img class="icon" src="${t.icon}" data-hover="${t.hoverIcon}" alt="${t.name}">
+      <span>${t.name}</span>
+    </div>
+  `;
+});
+
+document.querySelectorAll(".tool-cell").forEach(cell => {
+  const img = cell.querySelector(".icon");
+  const normal = img.src;
+  const hover = img.dataset.hover;
+
+  cell.addEventListener("mouseenter", () => {
+    img.src = hover;
+  });
+
+  cell.addEventListener("mouseleave", () => {
+    img.src = normal;
+  });
 });
 
 document.querySelectorAll('#tools .tool-cell').forEach((element, index) => {
