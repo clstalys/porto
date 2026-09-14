@@ -126,8 +126,8 @@ const DATA = {
   ],
 
   certificates: [
-    { title: "HCIA-AI", issuer: "Issued by Huawei", img: "", link : "" },
-    { title: "HCIA-Open Gauss",   issuer: "Issued by Huawei",  img: "", link : "" }
+    { title: "HCIA-AI", issuer: "Issued by Huawei", img: "./images/certificates/HCIA-AI.png", link : "" },
+    { title: "HCIA-Open Gauss",   issuer: "Issued by Huawei",  img: "./images/certificates/HCIA-openGauss.png", link : "" }
   ],
 
   contact: {
@@ -302,7 +302,11 @@ document.getElementById('connect-grid').innerHTML = `
   });
 
   cards.forEach((card, i) => {
-    card.addEventListener('click', () => go(i));
+    card.addEventListener('click', () => {
+      if (items[i].img) {
+        window.open(items[i].img, '_blank');
+      }
+    });
   });
 
   let startX = 0;
@@ -337,7 +341,15 @@ function makeCarousel({ trackId, prevId, nextId, items, renderCard }) {
   const nextBtn = document.getElementById(nextId);
 
   // render cards
-  items.forEach((item, i) => { track.innerHTML += renderCard(item, i); });
+  items.forEach((item, i) => {
+    track.innerHTML += renderCard(item, i);
+  });
+
+  track.querySelectorAll('.cert-card').forEach((card, i) => {
+    card.addEventListener('click', () => {
+      window.open(items[i].img, '_blank');
+    });
+  });
 
   // render dots dynamically after the buttons
   const dotsContainer = document.createElement('div');
