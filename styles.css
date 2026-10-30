@@ -1616,343 +1616,67 @@ body::after {
 }
 
 
-/* =================================
-   ABOUT ME - NEW DESIGN
-================================= */
+/* ABOUT ME - SPACING ADJUSTMENT */
 
-#about {
-  max-width: none;
-  width: 100%;
-  padding: 8rem 7rem 5rem;
-}
-
-/* Heading */
-
-.about-heading {
-  max-width: 1180px;
-  margin: 0 auto 2.5rem;
-  text-align: left;
-}
-
-.about-eyebrow {
-  display: inline-block;
-  color: var(--blue-muted);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  margin-bottom: 0.6rem;
+/* Make About Me title consistent with other sections */
+#about .about-heading {
+  margin-bottom: 2rem;
 }
 
 #about .about-heading .section-title {
-  text-align: left;
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.1;
-  margin: 0;
-  letter-spacing: -2px;
+  font-size: clamp(2.5rem, 4vw, 3.2rem);
+  letter-spacing: -1px;
+  line-height: 1.15;
 }
 
-#about .about-heading .section-title span {
-  color: var(--accent);
-}
-
-/* Main layout */
-
-#about .about-section {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 5rem;
-}
-
-/* Text */
-
-#about .about-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.25rem;
-  min-width: 0;
-}
-
-#about .about-text {
-  color: var(--white);
-  font-size: 1rem;
-  line-height: 1.9;
-  letter-spacing: 0.1px;
-  margin: 0;
-}
-
-#about .about-text strong {
-  color: var(--accent-bright);
-  font-weight: 700;
-}
-
-/* Download CV button */
-
-#about .btn-cv {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  margin-top: 0.5rem;
-  padding: 0.95rem 1.8rem;
-  border: 1px solid var(--accent-bright);
-  border-radius: 999px;
-  background: var(--accent-bright);
-  color: var(--navy);
-  text-decoration: none;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 800;
-  transition: all 0.25s ease;
-}
-
-#about .btn-cv:hover {
-  background: transparent;
-  color: var(--accent-bright);
-  border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.download-icon {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.download-arrow {
-  font-size: 1.1rem;
-  transition: transform 0.2s ease;
-}
-
-#about .btn-cv:hover .download-arrow {
-  transform: translate(3px, -3px);
-}
-
-/* Bottom highlights */
-
-.about-highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(200, 184, 154, 0.3);
-  gap: 1rem;
-}
-
-.highlight-item {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  min-width: 0;
-}
-
-.highlight-item:not(:last-child) {
-  border-right: 1px solid rgba(200, 184, 154, 0.25);
-  padding-right: 0.8rem;
-}
-
-.highlight-icon {
-  flex-shrink: 0;
-  color: var(--accent-bright);
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-
-.highlight-item strong,
-.highlight-item small {
-  display: block;
-}
-
-.highlight-item strong {
-  color: var(--white);
-  font-size: 0.72rem;
-  line-height: 1.5;
-}
-
-.highlight-item small {
-  color: var(--text-muted);
-  font-size: 0.65rem;
-  margin-top: 0.2rem;
-  line-height: 1.5;
-}
-
-/* Photo */
-
+/* Move the entire right side slightly downward */
 #about .about-right {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 480px;
-  isolation: isolate;
+  transform: translateY(45px);
 }
 
+/* Give the photo more breathing room */
 #about .about-right img {
-  position: relative;
-  z-index: 2;
-  width: min(100%, 370px);
-  height: 460px;
-  margin: 0;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 48% 48% 45% 45%;
-  border: 3px solid var(--accent-bright);
-  box-shadow: 0 0 0 14px rgba(36, 60, 96, 0.55),
-              0 20px 55px rgba(0, 0, 0, 0.35);
+  width: min(100%, 350px);
+  height: 430px;
 }
 
-/* Decorative background behind photo */
-
-.about-photo-decoration {
-  position: absolute;
-  z-index: 1;
-  width: 390px;
-  height: 390px;
-  border-radius: 42% 58% 60% 40%;
-  background: linear-gradient(
-    135deg,
-    rgba(91, 127, 166, 0.45),
-    rgba(90, 45, 135, 0.35)
-  );
-  transform: rotate(-12deg);
+/* Adjust decorative background to match photo */
+#about .about-photo-decoration {
+  width: 370px;
+  height: 370px;
 }
 
-/* Doodles */
-
-.about-doodle {
-  position: absolute;
-  z-index: 3;
-  color: var(--accent-bright);
-  pointer-events: none;
+/* Keep doodles aligned with the photo */
+#about .doodle-code {
+  top: 15%;
 }
 
-.doodle-code {
-  top: 12%;
-  left: -2%;
-  font-size: 1.5rem;
-  border: 1px solid var(--accent-bright);
-  border-radius: 50%;
-  padding: 0.8rem;
-  transform: rotate(-12deg);
+#about .doodle-star {
+  top: 55%;
 }
 
-.doodle-star {
-  top: 48%;
-  right: -2%;
-  font-size: 2.5rem;
+#about .doodle-heart {
+  bottom: 5%;
 }
 
-.doodle-heart {
-  bottom: 10%;
-  left: 2%;
-  font-size: 2.5rem;
+#about .about-note {
+  top: 5%;
+  right: -3%;
 }
 
-.about-note {
-  position: absolute;
-  z-index: 3;
-  top: 2%;
-  right: -5%;
-  color: var(--accent-bright);
-  font-family: 'Syne', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  text-align: center;
-  transform: rotate(7deg);
-}
-
-/* Responsive */
-
+/* Responsive adjustment */
 @media (max-width: 1000px) {
-  #about {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  #about .about-section {
-    gap: 3rem;
-  }
-
-  #about .about-right img {
-    width: min(100%, 320px);
-    height: 400px;
-  }
-
-  .about-photo-decoration {
-    width: 320px;
-    height: 320px;
-  }
-
-  .about-highlights {
-    grid-template-columns: 1fr;
-  }
-
-  .highlight-item:not(:last-child) {
-    border-right: none;
-    padding-right: 0;
+  #about .about-right {
+    transform: translateY(20px);
   }
 }
 
 @media (max-width: 600px) {
-  #about {
-    padding: 7rem 1.5rem 3rem;
-  }
-
-  .about-heading {
-    margin-bottom: 2rem;
+  #about .about-right {
+    transform: none;
   }
 
   #about .about-heading .section-title {
-    font-size: 3rem;
-  }
-
-  #about .about-section {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  #about .about-left {
-    gap: 1rem;
-  }
-
-  #about .about-text {
-    font-size: 0.9rem;
-    line-height: 1.8;
-  }
-
-  #about .btn-cv {
-    margin-top: 0.5rem;
-  }
-
-  .about-highlights {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  #about .about-right {
-    min-height: 390px;
-  }
-
-  #about .about-right img {
-    width: 260px;
-    height: 340px;
-  }
-
-  .about-photo-decoration {
-    width: 270px;
-    height: 270px;
-  }
-
-  .about-note {
-    right: 0;
-    top: 0;
-  }
-
-  .doodle-code {
-    left: 0;
+    font-size: 2.5rem;
   }
 }
