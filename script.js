@@ -126,8 +126,9 @@ const DATA = {
   ],
 
   certificates: [
-    { title: "HCIA-AI", issuer: "Issued by Huawei", img: "./images/certificates/HCIA-AI.png", link : "" },
-    { title: "HCIA-Open Gauss",   issuer: "Issued by Huawei",  img: "./images/certificates/HCIA-openGauss.png", link : "" }
+    { title: "HCIA-AI V4.0", issuer: "Issued by Huawei", img: "./images/certificates/HCIA-AI.png", link : "" },
+    { title: "HCIA-Open Gauss V1.0",   issuer: "Issued by Huawei",  img: "./images/certificates/HCIA-openGauss.png", link : "" },
+    { title: "RevoU Mini Course-Intro to Data Analitycs",   issuer: "Issued by RevoU",  img: "./images/certificates/revouDatAnal.png", link : "" }
   ],
 
   contact: {
