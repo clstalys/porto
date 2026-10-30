@@ -1644,7 +1644,7 @@ body::after {
 
 #about .about-heading .section-title {
   text-align: left;
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   line-height: 1.1;
   margin: 0;
   letter-spacing: -2px;
@@ -1737,7 +1737,7 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 480px;
+  min-height: 450px;
   isolation: isolate;
 }
 
