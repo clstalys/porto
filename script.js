@@ -415,6 +415,7 @@ makeCarousel({
 
 const revealElements = document.querySelectorAll(
   'section:not(#about) .section-title, ' +
+  '#about .about-heading, ' +
   '.about-section, ' +
   '#tools .tool-cell, ' +
   '.projects-container, ' +
