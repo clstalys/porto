@@ -134,7 +134,7 @@ const DATA = {
   contact: {
     github:    "clstalys",
     linkedin:  "lysia-callysta/",
-    instagram: "@cltalys_",
+    instagram: "@clstalys_",
     email:     "lysterine3@gmail.com",
     phone:     "081327858552"
   }
